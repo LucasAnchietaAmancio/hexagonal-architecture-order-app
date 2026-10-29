@@ -8,8 +8,8 @@ public class EmailValueObject {
 
     private String email;
 
-    public EmailValueObject(String email) {
-        this.email = email;
+    private EmailValueObject(String email) {
+        this.email = email.trim().toLowerCase();
     }
 
     public static EmailValueObject create(String email) {

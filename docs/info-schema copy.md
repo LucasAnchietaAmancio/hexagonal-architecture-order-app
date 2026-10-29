@@ -1,7 +1,7 @@
 Regras de Negócio
 
 - RN-01	Todo cliente deve possuir identificador único. **[OK]**
-- RN-02	O e-mail informado para um cliente deve possuir formato válido.**[ ]**
+- RN-02	O e-mail informado para um cliente deve possuir formato válido.**[OK]**
 - RN-03	Um pedido deve estar associado a um cliente existente.**[ ]**
 - RN-04	Um pedido deve possuir pelo menos um item.**[ ]**
 - RN-05	A quantidade de um item deve ser maior que zero.**[ ]**

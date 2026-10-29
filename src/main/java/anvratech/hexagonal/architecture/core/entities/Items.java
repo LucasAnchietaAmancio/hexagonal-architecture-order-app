@@ -3,6 +3,9 @@ package anvratech.hexagonal.architecture.core.entities;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.UUID;
+
+import anvratech.hexagonal.architecture.core.exceptions.fields.NameInvalidException;
+
 import java.math.BigDecimal;
 
 
@@ -26,7 +29,7 @@ public class Items {
     @Column(name="name", nullable=false)
     private String name;
     
-    @Column(name="description", nullable=false, columnDefinition="TEXT")
+    @Column(name="description", columnDefinition="TEXT")
     private String description;
     
     @Column(name="unitPrice", nullable=false, precision = 19, scale = 2)
@@ -45,6 +48,10 @@ public class Items {
     }
 
     public static Items create(String name,String description, BigDecimal unitPrice) {
+        if(name == null || name.trim().isEmpty()) {
+            throw new NameInvalidException();
+        }
+        
         return new Items(name, description, unitPrice);
     }
 
